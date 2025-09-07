@@ -126,8 +126,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the ISC License.
 
-## 📞 Contact
-
-Prince Kumar - [@your_twitter](https://twitter.com/your_twitter)
-
-Project Link: [https://github.com/yourusername/potd-reminder](https://github.com/yourusername/potd-reminder) 
+ 
