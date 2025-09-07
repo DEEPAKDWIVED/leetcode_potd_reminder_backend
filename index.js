@@ -45,14 +45,24 @@ connectdb()
 
 
 const userrouter = require('./routes/users')
+const { fetchAndStorePOTD } = require('./scheduler')
 //Routes
 app.use('/users', userrouter)
 app.use('/leetcode', require('./routes/leetcode'))
 
 
-
+app.get('/syncpotd', async (req, res) => {
+  try {
+    const potd = await fetchAndStorePOTD();
+    res.json(potd);
+  } catch (error) {
+    console.error('Error fetching POTD:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
 
 app.get('/', (req, res) => {
+  fetchAndStorePOTD()
   res.send('Hello World!')
 })
 
